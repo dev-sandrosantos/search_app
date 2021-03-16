@@ -6,7 +6,7 @@ import 'package:mockito/mockito.dart';
 import 'package:search_app/Modules/Search/Domain/Errors/Errors.dart';
 import 'package:search_app/Modules/Search/External/DataSouces/GithubDataSouceImpl.dart';
 
-import '../../Utils/GithubResponse.dart';
+import '../../Utils/githubResponse.dart';
 
 class DioMock extends Mock implements Dio {}
 
@@ -15,7 +15,7 @@ void main() {
   final datasouce = GithubDataSouce(dio);
   test('should return a list of ResultSearchModel', () {
     when(dio.get(any)).thenAnswer((_) async =>
-        Response(data: jsonDecode(GithubResponse), statusCode: 200));
+        Response(data: jsonDecode(githubResponse), statusCode: 200));
     final result = datasouce.getSearch('Sandro');
     expect(result, completes);
   });

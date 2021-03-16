@@ -30,8 +30,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   dartz: ^0.10.0-nullsafety.1
   dio: ^3.0.10
+  flutter_modular: ^3.0.1
 
 dev_dependencies:
+  flutter_modular_test:
   flutter_test:
     sdk: flutter
   mockito: ^5.0.0-nullsafety.7
