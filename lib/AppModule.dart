@@ -13,7 +13,7 @@ class AppModule extends Module {
     Bind((i) => SearchByTextImpl(i())),
     Bind((i) => SearchRepositoryImpl(i())),
     Bind((i) => GithubDataSouce(i())),
-    Bind.singleton((i) => SearchBloC(i()))
+    Bind.factory((i) => SearchBloC(i()))
   ];
 
   @override
