@@ -22,8 +22,8 @@ void main() {
   });
 
   test('must return a list of ResutSeach', () async {
-    when(dioMock.get((any))).thenAnswer((_) async =>
-        Response(data: jsonDecode(githubResponse), statusCode: 200));
+    when(dioMock.get((any))).thenAnswer((_) async => Response(
+        data: jsonDecode(githubResponse), statusCode: 200, request: null));
     final useCase = Modular.get<SearchByText>();
     final result = await useCase("Alexsandro");
     expect(result | null, isA<List<ResultSearch>>());

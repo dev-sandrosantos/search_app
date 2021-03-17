@@ -4,6 +4,7 @@ import 'package:search_app/Modules/Search/Data/Repositories/SearchRepositoryImpl
 import 'package:search_app/Modules/Search/Domain/Entities/UseCases/SearchByText.dart';
 import 'package:search_app/Modules/Search/External/DataSouces/GithubDataSouceImpl.dart';
 import 'package:search_app/Modules/Search/Presenter/Search/SearchPage.dart';
+import 'package:search_app/Modules/Search/Presenter/SearchBloC.dart';
 
 class AppModule extends Module {
   @override
@@ -11,7 +12,8 @@ class AppModule extends Module {
     Bind((i) => Dio()),
     Bind((i) => SearchByTextImpl(i())),
     Bind((i) => SearchRepositoryImpl(i())),
-    Bind((i) => GithubDataSouce(i()))
+    Bind((i) => GithubDataSouce(i())),
+    Bind.singleton((i) => SearchBloC(i()))
   ];
 
   @override
