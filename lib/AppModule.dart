@@ -8,13 +8,13 @@ import 'package:search_app/Modules/Search/Presenter/SearchBloC.dart';
 
 class AppModule extends Module {
   @override
-  List<Bind> get binds => [
-        Bind((i) => Dio()),
-        Bind((i) => SearchByTextImpl(i.get())),
-        Bind((i) => SearchRepositoryImpl(i.get())),
-        Bind((i) => GithubDataSouce(i.get())),
-        Bind((i) => SearchBloC(i.get())),
-      ];
+  final List<Bind> binds = [
+    Bind((i) => Dio()),
+    Bind((i) => SearchByTextImpl(i.get())),
+    Bind((i) => SearchRepositoryImpl(i.get())),
+    Bind((i) => GithubDataSouce(i.get())),
+    Bind((i) => SearchBloC(i.get())),
+  ];
 
   @override
   final List<ModularRoute> routes = [
