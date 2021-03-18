@@ -38,11 +38,12 @@ class _SearchPageState extends State<SearchPage> {
                 stream: bloc,
                 builder: (context, snapshot) {
                   final state = bloc.state;
+                  print(state.toString());
                   if (state is SearchState) {
-                    return Center(child: const Text('Digite Seu Texto'));
+                    return Center(child: Text('Digite Seu Texto'));
                   }
                   if (state is SearchError) {
-                    return Center(child: const Text('Houve um Erro'));
+                    return Center(child: Text('Houve um Erro'));
                   }
                   if (state is SearchLoading) {
                     return Center(child: CircularProgressIndicator());
@@ -53,12 +54,10 @@ class _SearchPageState extends State<SearchPage> {
                       itemBuilder: (_, id) {
                         final item = list[id];
                         return ListTile(
-                          leading: item.img == null
-                              ? Container()
-                              : CircleAvatar(
-                                  backgroundImage: NetworkImage(item.img),
-                                ),
-                          title: Text(item.title ?? ""),
+                          leading: CircleAvatar(
+                            backgroundImage: NetworkImage(item.avatar_url),
+                          ),
+                          title: Text(item.login),
                         );
                       });
                 }),

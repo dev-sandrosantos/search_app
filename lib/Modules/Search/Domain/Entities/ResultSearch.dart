@@ -1,7 +1,9 @@
 class ResultSearch {
-  final String title;
-  final String subTitle;
-  final String img;
+  final String login;
+  final int id;
+  // ignore: non_constant_identifier_names
+  final String avatar_url;
 
-  ResultSearch({this.title, this.subTitle, this.img});
+  // ignore: non_constant_identifier_names
+  ResultSearch({this.login, this.id, this.avatar_url});
 }

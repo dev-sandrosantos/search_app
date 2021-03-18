@@ -22,6 +22,7 @@ class GithubDataSouce implements SearchDataSouce {
       final list = (response.data["items"] as List)
           .map((e) => ResultSearchModel.fromMap(e))
           .toList();
+      print(list.map((e) => e.id.toString()));
       return list;
     } else {
       throw DataSouceError();
