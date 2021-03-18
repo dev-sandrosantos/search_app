@@ -39,7 +39,7 @@ class _SearchPageState extends State<SearchPage> {
                 builder: (context, snapshot) {
                   final state = bloc.state;
                   print(state.toString());
-                  if (state is SearchState) {
+                  if (state is SearchStart) {
                     return Center(child: Text('Digite Seu Texto'));
                   }
                   if (state is SearchError) {

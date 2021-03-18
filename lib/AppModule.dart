@@ -10,10 +10,10 @@ class AppModule extends Module {
   @override
   final List<Bind> binds = [
     Bind((i) => Dio()),
-    Bind((i) => SearchByTextImpl(i.get())),
-    Bind((i) => SearchRepositoryImpl(i.get())),
-    Bind((i) => GithubDataSouce(i.get())),
-    Bind((i) => SearchBloC(i.get())),
+    Bind.lazySingleton((i) => SearchByTextImpl(i.get())),
+    Bind.lazySingleton((i) => SearchRepositoryImpl(i.get())),
+    Bind.lazySingleton((i) => GithubDataSouce(i.get())),
+    Bind.lazySingleton((i) => SearchBloC(i.get())),
   ];
 
   @override
